@@ -1,0 +1,22 @@
+{
+  "name": "CSSThing",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "browser_action":{
+    "default_popup": "panel.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": [
+      "sites you are interested in"
+    ],
+    "js": ["cache.js","css_processor.js"]
+  }],
+  "permissions": [
+    "storage",
+    "locations you want to read CSS from"
+  ]
+}
